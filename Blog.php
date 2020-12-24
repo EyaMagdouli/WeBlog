@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Bootstrap 4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/Blog.css">
     <title>My Blog</title>
+    <style>
+        .display-5{
+            padding: 10px;
+            color:#F08080;
+        }
+        .navbar-brand{
+    color: #FAEBD7;
+}
+footer{
+    width: auto;
+    height: auto;
+    background-color: #FFF0F5 ;
+    overflow:auto;
+}
+    </style>
 </head>
 <body>
     <!-- navbar -->
@@ -30,9 +44,9 @@
         <ul class="navbar-nav ml-auto ">
         <form class="form-inline ">
         <div class="form-group">
-        <button type="button" class="btn btn-outline-primary">Sign In</button></div>
+        <a href="Signin.php"><button type="button" class="btn btn-outline-primary">Sign In</button></div></a>
         <div class="form-group mx-sm-3">
-        <button type="button" class="btn btn-outline-primary">Sign Up</button></div>
+        <a href="Signup.php"><button type="button" class="btn btn-outline-primary">Sign Up</button></div></a>
         </form> 
         </ul>
     </nav>
@@ -45,7 +59,7 @@
         <h2>Post Title</h2>
         <div><a href="#0">Author Name </a></div>
     </header>
-    <section id="main">
+    <section class="main">
         <figure class="figure">
         <img src="https://placehold.it/300x150" class="figure-img" alt="Figure image"></figure>
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -72,7 +86,7 @@
             </div>       
         </form>
         <div class="form-group">
-                <label for="Comment">You comment:</label>
+                <label for="Comment">Your comment:</label>
                 <textarea class="form-control" placeholder="Write your comment here" id="Comment" name="Commet" rows="5"></textarea>            
                 <button type="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-danger">Reset</button>
@@ -84,7 +98,7 @@
         <h2>Post Title</h2>
         <div><a href="#0">Author Name </a></div>
     </header>
-    <section id="main">
+    <section class="main">
         <figure class="figure">
         <img src="https://placehold.it/300x150  " class="figure-img" alt="Figure image"></figure>
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -106,7 +120,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         </div>
-        <form action="">
+        <form>
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" placeholder="name" id="name" name="name" required>            
@@ -117,7 +131,7 @@
             </div>       
         </form>
         <div class="form-group">
-                <label for="Comment">You comment:</label>
+                <label for="Comment">Your comment:</label>
                 <textarea class="form-control" placeholder="Write your comment here" id="Comment" name="Commet" rows="5"></textarea>            
                 <button type="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-danger">Reset</button>
@@ -148,30 +162,8 @@
 
 
 
-    <!--<div class="container row">
-    <div class="col-4">
-    <article>  
-        <h3>Message's Title</h3>
-        <h5>Introduction :</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-    </article>
-    </div>
-    <div class="col-4">
-    <article>  
-        <h3>Message's Title</h3>
-        <h5>Introduction :</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-    </article>
-    </div>
-    <div class="col-4">
-    <article>  
-        <h3>Message's Title</h3>
-        <h5>Introduction :</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-    </article>
-    </div>
-    </div>-->
-<footer class="jumbotron text-center">
+
+<footer class="text-center">
 <h5>Contact :</h5>
 <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
   <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
