@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['username'])) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: Signin.php');
+    }
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['username']);
+        header("location: Signin.php");
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,9 +57,14 @@ footer{
         <ul class="navbar-nav ml-auto ">
         <form class="form-inline ">
         <div class="form-group">
-        <a href="Signin.php"><button type="button" class="btn btn-outline-primary">Sign In</button></div></a>
+        <a href="Signin.php"><button type="button" class="btn btn-outline-primary">Sign In</button></a>
+        </div>
         <div class="form-group mx-sm-3">
-        <a href="Signup.php"><button type="button" class="btn btn-outline-primary">Sign Up</button></div></a>
+        <a href="Signup.php"><button type="button" class="btn btn-outline-primary">Sign Up</button></a>
+        </div>
+        <div class="form-group mx-sm-3">
+        <a href="Signin.php"><button type="button" class="btn btn-outline-primary" name="logout">Log out</button></a>
+        </div>
         </form> 
         </ul>
     </nav>
@@ -67,12 +85,10 @@ footer{
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </section>
     <section class="comments">
-        <button type="button" class="btn btn-primary">Like</button>
-        <h5>Comments</h5>
-        <div class="media"><img src="https://placehold.it/32x32" alt="Media Object image">
+        <h5 style="color:red;">Comments</h5>
+        <div class="media">
         <div class="media-body">
         <p><a href="mailto:example@gmail.com">Author Name</a></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         </div>
         <form action="">
@@ -87,9 +103,10 @@ footer{
         </form>
         <div class="form-group">
                 <label for="Comment">Your comment:</label>
-                <textarea class="form-control" placeholder="Write your comment here" id="Comment" name="Commet" rows="5"></textarea>            
-                <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="reset" class="btn btn-danger">Reset</button>
+                <textarea class="form-control" placeholder="Write your comment here" id="Comment" name="Commet" rows="5"></textarea>      
+                <form  action="comment.php" method="POST">      
+                <button type="submit" class="btn btn-primary" action="comment.php" method="POST">Submit</button>
+                </form>
             </div>
     </section>
     </article>
@@ -106,18 +123,10 @@ footer{
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
     </section>
     <section class="comments">
-        <button type="button" class="btn btn-primary">Like</button>
-        <h5>Comments</h5>
-        <div class="media"><img src="https://placehold.it/32x32" alt="Media Object image">
+        <h5 style="color:red;">Comments:</h5>
+        <div class="media">
         <div class="media-body">
         <p><a href="mailto:example@gmail.com">Author Name</a></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        </div>
-        <div class="media"><img src="https://placehold.it/32x32" alt="Media Object image">
-        <div class="media-body">
-        <p><a href="mailto:example@gmail.com">Author Name</a></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         </div>
         <form>
@@ -132,9 +141,9 @@ footer{
         </form>
         <div class="form-group">
                 <label for="Comment">Your comment:</label>
-                <textarea class="form-control" placeholder="Write your comment here" id="Comment" name="Commet" rows="5"></textarea>            
-                <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="reset" class="btn btn-danger">Reset</button>
+                <textarea class="form-control" placeholder="Write your comment here" id="Comment" name="Comment" rows="5"></textarea>            
+                <form  action="comment.php" method="POST">
+                <button type="submit" class="btn btn-primary">Submit</button></form>
             </div>
 
     </section>
@@ -145,7 +154,6 @@ footer{
         <div class="card">
             <div class="card-body">
                 <h5><a href="#0">My Name</a></h5>
-                <img src="https://placehold.it/80x80" alt="Figure image" class="img-fluid">
                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugi.</p>
             </div>
         </div>
